@@ -12,11 +12,16 @@ git clone https://github.com/Curt-D-Francis/Money-Calculator.git
 
 Run the installation script:
 
+cd Money-Calculator
+
 python install.py
 
 **Usage**
 
 After installation, run the program using:
+
+cd Money-Calculator
+
 python main.py
 
 **Features**
