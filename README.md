@@ -25,6 +25,7 @@ cd Money-Calculator
 python main.py
 
 You will be prompted if you want to run the application with a y/n
+
 If you want to run it press y
 
 **Features**
