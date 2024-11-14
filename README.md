@@ -7,7 +7,7 @@ A Python application that calculates exact change for any given amount.
 Clone this repository(Or you can download the zip):
 
 ```bash
-git clone https://github.com/yourusername/Money-Calculator.git
+git clone https://github.com/Curt-D-Francis/Money-Calculator.git
 ```
 
 Run the installation script:
