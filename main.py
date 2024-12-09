@@ -13,7 +13,7 @@ def create_gui():
     # Create the main window
     root = ctk.CTk()
     root.title("Change Calculator")
-    root.geometry("400x400")
+    root.geometry("500x500")
 
     # Title label
     title_label = ctk.CTkLabel(root, text="Exact Change Calculator", font=ctk.CTkFont(size=20, weight="bold"))
@@ -44,8 +44,19 @@ def create_gui():
             
             # Clear the output text box
             output_text.delete(1.0, "end")
+            
+            # Handle bills and coins
             for denom, count in change.items():
-                output_text.insert("end", f"{denom}: {count}\n")
+                
+                if denom == "penny":
+                    multi_denom = "pennies" if count > 1 else "penny"
+                elif denom in ["dime", "nickel", "quarter"]:
+                    multi_denom = denom if count == 1 else f"{denom}s"
+                else:
+                    multi_denom = denom
+
+    
+                output_text.insert("end", f"* {count} - {multi_denom}\n")
                 
         except (ValueError, TypeError) as e:
             messagebox.showerror("Error", str(e))
