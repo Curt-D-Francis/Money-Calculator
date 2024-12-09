@@ -52,6 +52,8 @@ def create_gui():
                     multi_denom = "pennies" if count > 1 else "penny"
                 elif denom in ["dime", "nickel", "quarter"]:
                     multi_denom = denom if count == 1 else f"{denom}s"
+                elif denom in ["100 bill", "50 bill", "20 bill", "10 bill", "5 bill", "1 bill"]:
+                    multi_denom = f"${denom}" if count == 1 else f"${denom}s"
                 else:
                     multi_denom = denom
 
