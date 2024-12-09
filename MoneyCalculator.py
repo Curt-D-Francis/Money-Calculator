@@ -1,7 +1,5 @@
 def calculate_change(amount):
     # Type checking
-    if isinstance(amount, str):
-        raise TypeError("Amount must be a number, not a string")
     if not isinstance(amount, (int, float)):
         raise TypeError("Amount must be a number")
     

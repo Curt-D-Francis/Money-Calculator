@@ -36,12 +36,9 @@ def create_gui():
     # Function to display the change
     def show_change():
         try:
-            amount_str = entry_amount.get()
-            try:
-                amount = float(amount_str)
-            except ValueError:
-                messagebox.showerror("Error", "Please enter a valid number")
-                return
+            amount = float(entry_amount.get())
+            
+        
                 
             change = calculate_change(amount)
             
@@ -50,11 +47,9 @@ def create_gui():
             for denom, count in change.items():
                 output_text.insert("end", f"{denom}: {count}\n")
                 
-        except ValueError as e:
+        except (ValueError, TypeError) as e:
             messagebox.showerror("Error", str(e))
-        except TypeError as e:
-            messagebox.showerror("Error", str(e))
-
+       
     # Calculate button
     calculate_button = ctk.CTkButton(root, text="Calculate Change", command=show_change)
     calculate_button.pack(pady=(10, 20))
